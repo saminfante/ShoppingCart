@@ -1,0 +1,63 @@
+version: 2
+registries:
+  git-github-com:
+    type: git
+    url: https://github.com
+    username: saminfante
+    password: "${{secrets.GIT_GITHUB_COM_PASSWORD}}"
+
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:49"
+    timezone: US/Central
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: org.springframework:spring-orm
+    versions:
+    - 5.3.3
+    - 5.3.4
+    - 5.3.5
+  - dependency-name: org.springframework:spring-context
+    versions:
+    - 5.3.3
+    - 5.3.4
+    - 5.3.5
+  - dependency-name: com.fasterxml.jackson.core:jackson-annotations
+    versions:
+    - 2.12.1
+    - 2.12.2
+  - dependency-name: com.fasterxml.jackson.core:jackson-core
+    versions:
+    - 2.12.1
+    - 2.12.2
+  - dependency-name: org.hibernate:hibernate-core
+    versions:
+    - 5.4.27.Final
+    - 5.4.28.Final
+    - 5.4.29.Final
+  - dependency-name: org.springframework.security:spring-security-taglibs
+    versions:
+    - 5.4.2
+    - 5.4.4
+    - 5.4.5
+  - dependency-name: org.springframework.security:spring-security-config
+    versions:
+    - 5.4.2
+    - 5.4.4
+    - 5.4.5
+  - dependency-name: org.springframework.security:spring-security-web
+    versions:
+    - 5.4.2
+    - 5.4.4
+    - 5.4.5
+  - dependency-name: org.hibernate:hibernate-validator
+    versions:
+    - 6.1.5.Final
+  - dependency-name: org.springframework:spring-webmvc
+    versions:
+    - 5.2.3.RELEASE
+  registries:
+  - git-github-com
